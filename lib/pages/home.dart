@@ -11,8 +11,19 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Screen')),
+      appBar: AppBar(title: const Text('播放列表')),
       body: Center(child: TextList()),
+      floatingActionButton: _buildFloatingActionButton(context),
+    );
+  }
+
+  FloatingActionButton _buildFloatingActionButton(BuildContext context) {
+    return FloatingActionButton(
+      onPressed: () {
+        // 跳转到添加文本页面
+        GoRouter.of(context).go('/add-text');
+      },
+      child: const Icon(Icons.add),
     );
   }
 }
