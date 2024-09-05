@@ -10,7 +10,7 @@ final GoRouter appRouer = GoRouter(
       GoRoute(
         path: '/',
         builder: (BuildContext context, GoRouterState state) {
-          return HomeScreen();
+          return const HomeScreen();
         },
         routes: <RouteBase>[
           GoRoute(
@@ -21,7 +21,7 @@ final GoRouter appRouer = GoRouter(
             pageBuilder: (context, state) {
               return CustomTransitionPage(
                 key: state.pageKey,
-                child: DetailsScreen(),
+                child: const DetailsScreen(),
                 transitionsBuilder:
                     (context, animation, secondaryAnimation, child) {
                   // Change the opacity of the screen using a Curve based on the the animation's

@@ -3,18 +3,18 @@ import 'package:flutter/material.dart';
 class ErrorPage extends StatelessWidget {
   final String errorMessage;
 
-  ErrorPage({required this.errorMessage});
+  const ErrorPage({super.key, required this.errorMessage});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Error'),
+        title: const Text('Error'),
       ),
       body: Center(
         child: Text(
           errorMessage,
-          style: TextStyle(fontSize: 20),
+          style: const TextStyle(fontSize: 20),
         ),
       ),
     );
