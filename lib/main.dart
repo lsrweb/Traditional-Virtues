@@ -21,6 +21,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-/// The home screen
-

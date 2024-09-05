@@ -1,16 +1,3 @@
 # ctmd_app
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+由于每天打游戏都要和队友亲切的交流,问候彼此的家庭情况,我的嘴感到很累很干,就会多喝水,喝水就会导致多上厕所,多上厕所就会导致无法和队友友好亲切交流,甚至导致游戏对局失败!!!!,鱼是,我发明了这款手机朗读文字的app,帮助我们和队友交流

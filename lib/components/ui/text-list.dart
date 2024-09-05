@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:ctmd_app/cores/sql.dart';
 import 'package:ctmd_app/utils/tts-speed.dart';
 import 'package:flutter/material.dart';
+import 'package:sqflite/sqflite.dart';
 
 class TextList extends StatefulWidget {
   /// Constructs a [TextList]
@@ -15,13 +16,6 @@ class TextList extends StatefulWidget {
       'text_list.db',
       'CREATE TABLE text_list (id INTEGER PRIMARY KEY, text TEXT)',
     );
-    // 插入数据
-    await SQLiteUtil.insert('text_list', {'text': 'Hello, World!'});
-    // 打印查询数据库数据
-    final List<Map<String, dynamic>> list = await SQLiteUtil.query('text_list');
-    list.forEach((element) {
-      print(element);
-    });
   }
 
   @override
@@ -48,6 +42,10 @@ class _TextListState extends State<TextList> {
     await TextList.initDB();
     // 查询数据库数据
     final List<Map<String, dynamic>> list = await SQLiteUtil.query('text_list');
+    // setState(() {
+    //   items = list.map((item) => item['text'] as String).toList();
+    // });
+    // 渲染数据,
     setState(() {
       items = list.map((item) => item['text'] as String).toList();
     });
@@ -55,6 +53,25 @@ class _TextListState extends State<TextList> {
 
   @override
   Widget build(BuildContext context) {
+    // 如果数据为空展示暂无数据
+    if (items.isEmpty) {
+      // 展示一张图片,和一段文字 暂无数据
+      return const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            // https://pic.20988.xyz/2024-08-02/1722562576-715384-ch-8.jpg
+            Image(
+              image: NetworkImage(
+                  'https://pic.20988.xyz/2024-08-02/1722562576-715384-ch-8.jpg'),
+              width: 300,
+            ),
+            Text('暂无数据'),
+          ],
+        ),
+      );
+    }
+
     return ListView.builder(
       itemCount: items.length,
       itemBuilder: (BuildContext context, int index) {
