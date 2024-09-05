@@ -1,3 +1,4 @@
+import 'package:ctmd_app/components/ui/text-list.dart';
 import 'package:ctmd_app/utils/tts-speed.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -11,13 +12,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Home Screen')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () =>
-              {context.go('/details'), TtsSpeedUtils().speak('我曹尼玛臭逼')},
-          child: const Text('Go to the Details screen'),
-        ),
-      ),
+      body: Center(child: TextList()),
     );
   }
 }
